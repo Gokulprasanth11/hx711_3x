@@ -1,0 +1,7 @@
+default: hx711_2025
+build_dir: C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build
+domains:
+  - name: hx711_2025
+    build_dir: C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025
+flash_order:
+  - hx711_2025

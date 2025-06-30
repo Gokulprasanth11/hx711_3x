@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/CMakeFiles/hx711_2025"
+		},
+		{
+			"file" : "C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/CMakeFiles/hx711_2025.rule"
+		},
+		{
+			"file" : "C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/CMakeFiles/hx711_2025-complete.rule"
+		},
+		{
+			"file" : "C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/hx711_2025-prefix/src/hx711_2025-stamp/hx711_2025-build.rule"
+		},
+		{
+			"file" : "C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/hx711_2025-prefix/src/hx711_2025-stamp/hx711_2025-configure.rule"
+		},
+		{
+			"file" : "C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/hx711_2025-prefix/src/hx711_2025-stamp/hx711_2025-download.rule"
+		},
+		{
+			"file" : "C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/hx711_2025-prefix/src/hx711_2025-stamp/hx711_2025-install.rule"
+		},
+		{
+			"file" : "C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/hx711_2025-prefix/src/hx711_2025-stamp/hx711_2025-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/hx711_2025-prefix/src/hx711_2025-stamp/hx711_2025-patch.rule"
+		},
+		{
+			"file" : "C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/hx711_2025-prefix/src/hx711_2025-stamp/hx711_2025-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"hx711_2025"
+		],
+		"name" : "hx711_2025"
+	}
+}

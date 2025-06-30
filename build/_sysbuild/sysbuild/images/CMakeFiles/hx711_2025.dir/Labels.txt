@@ -1,0 +1,13 @@
+# Target labels
+ hx711_2025
+# Source files and their labels
+C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/CMakeFiles/hx711_2025
+C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/CMakeFiles/hx711_2025.rule
+C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/CMakeFiles/hx711_2025-complete.rule
+C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/hx711_2025-prefix/src/hx711_2025-stamp/hx711_2025-build.rule
+C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/hx711_2025-prefix/src/hx711_2025-stamp/hx711_2025-configure.rule
+C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/hx711_2025-prefix/src/hx711_2025-stamp/hx711_2025-download.rule
+C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/hx711_2025-prefix/src/hx711_2025-stamp/hx711_2025-install.rule
+C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/hx711_2025-prefix/src/hx711_2025-stamp/hx711_2025-mkdir.rule
+C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/hx711_2025-prefix/src/hx711_2025-stamp/hx711_2025-patch.rule
+C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/sysbuild/images/hx711_2025-prefix/src/hx711_2025-stamp/hx711_2025-update.rule

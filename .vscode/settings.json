@@ -1,0 +1,12 @@
+{
+    "nrf-connect.applications": [],
+    "files.associations": {
+        "kernel.h": "c",
+        "hx711_config.h": "c",
+        "stdint.h": "c",
+        "device.h": "c",
+        "hx711_driver.h": "c",
+        "errno.h": "c",
+        "timing.h": "c"
+    }
+}

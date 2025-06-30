@@ -1,0 +1,13 @@
+/* Disable UART0 to free up GPIO pins */
+&uart0 {
+        status = "disabled";
+    };
+
+    /* Ensure GPIO is enabled */
+&gpio0 {
+        status = "okay";
+    };
+
+&gpio1 {
+        status = "okay";
+    };
