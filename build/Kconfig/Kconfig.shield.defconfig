@@ -1,2 +1,3 @@
 osource "C:/my_boards/boards/shields/*/Kconfig.defconfig"
+osource "C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/boards/shields/*/Kconfig.defconfig"
 osource "C:/ncs/v2.9.0/nrf/boards/shields/*/Kconfig.defconfig"

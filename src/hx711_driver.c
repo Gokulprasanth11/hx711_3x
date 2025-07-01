@@ -5,6 +5,7 @@
 
 #include "hx711_driver.h"
 #include <zephyr/kernel.h>
+#include <zephyr/device.h>
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/sys/util.h>
 #include  <stdint.h>

@@ -7,6 +7,7 @@
 #define HX711_CONFIG_H
 
 #include <zephyr/kernel.h>
+#include <zephyr/device.h>
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/devicetree.h>
 
