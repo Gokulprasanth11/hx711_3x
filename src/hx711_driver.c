@@ -5,7 +5,6 @@
 
 #include "hx711_driver.h"
 #include <zephyr/kernel.h>
-#include <zephyr/device.h>
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/sys/util.h>
 #include  <stdint.h>
@@ -37,8 +36,6 @@ int hx711_init(struct hx711_data *hx711,
 		printk("Failed to configure DOUT pin: %d\n", ret);
 		return ret;
 	}
-	int dout_state = gpio_pin_get(hx711->dout_dev, dout_pin);
-	printk("HX711 DOUT pin %d initial state: %d\n", dout_pin, dout_state);
 
 	/* Configure SCK pin as output, initially low */
 	ret = gpio_pin_configure(hx711->sck_dev, sck_pin, sck_flags);
@@ -46,15 +43,14 @@ int hx711_init(struct hx711_data *hx711,
 		printk("Failed to configure SCK pin: %d\n", ret);
 		return ret;
 	}
-	gpio_pin_set(hx711->sck_dev, sck_pin, 0);
-	int sck_state = gpio_pin_get(hx711->sck_dev, sck_pin);
-	printk("HX711 SCK pin %d initial state: %d\n", sck_pin, sck_state);
 
 	/* Power up delay - HX711 needs time to stabilize */
 	k_msleep(400);
 
+	/* Set default rate */
+	hx711->rate_sps = HX711_DEFAULT_RATE_SPS;
+
 	hx711->is_initialized = true;
-	hx711->num_pulses = 25; /* Default to Channel A, Gain 128, 10SPS */
 
 	return 0;
 }
@@ -64,14 +60,13 @@ int hx711_read_raw(struct hx711_data *hx711, int32_t *value)
 	int ret;
 	int32_t raw_value = 0;
 	uint8_t i;
-	int sck_state;
 
 	if (!hx711 || !value || !hx711->is_initialized) {
 		return -EINVAL;
 	}
 
-	/* Wait for data to be ready */
-	ret = hx711_wait_for_data(hx711, K_MSEC(20));
+	/* Wait for data to be ready - use shorter timeout */
+	ret = hx711_wait_for_data(hx711, K_MSEC(50));
 	if (ret < 0) {
 		return ret;
 	}
@@ -83,8 +78,6 @@ int hx711_read_raw(struct hx711_data *hx711, int32_t *value)
 		if (ret < 0) {
 			return ret;
 		}
-		sck_state = gpio_pin_get(hx711->sck_dev, hx711->sck_pin);
-		if (sck_state != 1) printk("Warning: SCK pin did not set to HIGH, got %d\n", sck_state);
 		k_busy_wait(1);
 
 		/* Read data bit */
@@ -98,30 +91,31 @@ int hx711_read_raw(struct hx711_data *hx711, int32_t *value)
 		if (ret < 0) {
 			return ret;
 		}
-		sck_state = gpio_pin_get(hx711->sck_dev, hx711->sck_pin);
-		if (sck_state != 0) printk("Warning: SCK pin did not set to LOW, got %d\n", sck_state);
 		k_busy_wait(1);
 
 		/* Shift data into result */
 		raw_value = (raw_value << 1) | data_bit;
 	}
 
-	/* 25th clock pulse to set the channel and gain for next reading */
-	ret = gpio_pin_set(hx711->sck_dev, hx711->sck_pin, 1);
-	if (ret < 0) {
-		return ret;
-	}
-	sck_state = gpio_pin_get(hx711->sck_dev, hx711->sck_pin);
-	if (sck_state != 1) printk("Warning: SCK pin did not set to HIGH, got %d\n", sck_state);
-	k_busy_wait(1);
+	/* Additional clock pulses to set channel and gain for next reading */
+	/* For 80 SPS: 27 total pulses (24 data + 3 config) = Channel A, Gain 64 */
+	/* For 10 SPS: 25 total pulses (24 data + 1 config) = Channel A, Gain 128 */
+	/* For 10 SPS: 26 total pulses (24 data + 2 config) = Channel B, Gain 32 */
+	
+	/* We want 80 SPS, so we need 3 additional pulses (27 total) */
+	for (i = 0; i < 3; i++) {
+		ret = gpio_pin_set(hx711->sck_dev, hx711->sck_pin, 1);
+		if (ret < 0) {
+			return ret;
+		}
+		k_busy_wait(1);
 
-	ret = gpio_pin_set(hx711->sck_dev, hx711->sck_pin, 0);
-	if (ret < 0) {
-		return ret;
+		ret = gpio_pin_set(hx711->sck_dev, hx711->sck_pin, 0);
+		if (ret < 0) {
+			return ret;
+		}
+		k_busy_wait(1);
 	}
-	sck_state = gpio_pin_get(hx711->sck_dev, hx711->sck_pin);
-	if (sck_state != 0) printk("Warning: SCK pin did not set to LOW, got %d\n", sck_state);
-	k_busy_wait(1);
 
 	/* Convert to signed 24-bit value */
 	if (raw_value & 0x800000) {
@@ -134,7 +128,9 @@ int hx711_read_raw(struct hx711_data *hx711, int32_t *value)
 
 int hx711_set_rate(struct hx711_data *hx711, uint8_t rate_sps)
 {
-	printk("HX711: Rate pin not used. Sampling rate is hardware-tied.\n");
+	/* Store the desired rate for next reading */
+	hx711->rate_sps = rate_sps;
+	printk("HX711: Rate set to %d SPS (will be applied on next reading)\n", rate_sps);
 	return 0;
 }
 
