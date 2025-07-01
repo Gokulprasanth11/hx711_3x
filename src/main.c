@@ -261,6 +261,7 @@ int main(void)
 
 			/* Print raw 24-bit values */
 			printk("[%u] %d %d %d\n", sample_count++, value_0, value_1, value_2);
+			k_msleep(1000);
 		} else {
 			/* No data ready, wait a bit */
 			k_msleep(10);
