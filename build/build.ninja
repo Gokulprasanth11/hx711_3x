@@ -179,7 +179,7 @@ build _sysbuild\CMakeFiles\sysbuild_guiconfig | ${cmake_ninja_workdir}_sysbuild\
 # Custom command for _sysbuild\CMakeFiles\boards
 
 build _sysbuild\CMakeFiles\boards | ${cmake_ninja_workdir}_sysbuild\CMakeFiles\boards: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\gokul_2rbw\OneDrive\Documents\Driver\hx711_2025\build\_sysbuild && C:\ncs\toolchains\0b393f9e1b\opt\bin\python.exe C:/ncs/v2.9.0/zephyr/scripts/list_boards.py --board-root=C:/my_boards --board-root=C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025 --board-root=C:/ncs/v2.9.0/nrf --board-root=C:/ncs/v2.9.0/zephyr --arch-root=C:/ncs/v2.9.0/zephyr --soc-root=C:/ncs/v2.9.0/modules/soc-hwmv1 --soc-root=C:/ncs/v2.9.0/zephyr"
+  COMMAND = cmd.exe /C "cd /D C:\Users\gokul_2rbw\OneDrive\Documents\Driver\hx711_2025\build\_sysbuild && C:\ncs\toolchains\0b393f9e1b\opt\bin\python.exe C:/ncs/v2.9.0/zephyr/scripts/list_boards.py --board-root=C:/my_boards --board-root=C:/ncs/v2.9.0/nrf --board-root=C:/ncs/v2.9.0/zephyr --arch-root=C:/ncs/v2.9.0/zephyr --soc-root=C:/ncs/v2.9.0/modules/soc-hwmv1 --soc-root=C:/ncs/v2.9.0/zephyr"
   pool = console
 
 

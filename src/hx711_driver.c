@@ -12,27 +12,23 @@
 
 int hx711_init(struct hx711_data *hx711, 
                const struct device *dout_dev, gpio_pin_t dout_pin, gpio_flags_t dout_flags,
-               const struct device *sck_dev, gpio_pin_t sck_pin, gpio_flags_t sck_flags,
-               const struct device *rate_dev, gpio_pin_t rate_pin, gpio_flags_t rate_flags)
+               const struct device *sck_dev, gpio_pin_t sck_pin, gpio_flags_t sck_flags)
 {
 	int ret;
 
-	if (!hx711 || !dout_dev || !sck_dev || !rate_dev) {
+	if (!hx711 || !dout_dev || !sck_dev) {
 		return -EINVAL;
 	}
 
 	/* Store device handles */
 	hx711->dout_dev = dout_dev;
 	hx711->sck_dev = sck_dev;
-	hx711->rate_dev = rate_dev;
 
 	/* Store pin information */
 	hx711->dout_pin = dout_pin;
 	hx711->sck_pin = sck_pin;
-	hx711->rate_pin = rate_pin;
 	hx711->dout_flags = dout_flags;
 	hx711->sck_flags = sck_flags;
-	hx711->rate_flags = rate_flags;
 
 	/* Configure DOUT pin as input with pull-up */
 	ret = gpio_pin_configure(hx711->dout_dev, dout_pin, dout_flags);
@@ -48,25 +44,10 @@ int hx711_init(struct hx711_data *hx711,
 		return ret;
 	}
 
-	/* Configure RATE pin as output, high for 80 SPS */
-	ret = gpio_pin_configure(hx711->rate_dev, rate_pin, rate_flags);
-	if (ret < 0) {
-		printk("Failed to configure RATE pin: %d\n", ret);
-		return ret;
-	}
-
-	/* Set RATE pin high for 80 SPS */
-	ret = gpio_pin_set(hx711->rate_dev, rate_pin, 1);
-	if (ret < 0) {
-		printk("Failed to set RATE pin: %d\n", ret);
-		return ret;
-	}
-
 	/* Power up delay - HX711 needs time to stabilize */
 	k_msleep(400);
 
 	hx711->is_initialized = true;
-	printk("HX711 initialized successfully with rate pin\n");
 
 	return 0;
 }
@@ -137,29 +118,7 @@ int hx711_read_raw(struct hx711_data *hx711, int32_t *value)
 
 int hx711_set_rate(struct hx711_data *hx711, uint8_t rate_sps)
 {
-	int ret;
-
-	if (!hx711 || !hx711->is_initialized) {
-		return -EINVAL;
-	}
-
-	/* Set rate pin based on desired sampling rate */
-	if (rate_sps == 80) {
-		ret = gpio_pin_set(hx711->rate_dev, hx711->rate_pin, 1);
-		printk("HX711 rate set to 80 SPS\n");
-	} else if (rate_sps == 10) {
-		ret = gpio_pin_set(hx711->rate_dev, hx711->rate_pin, 0);
-		printk("HX711 rate set to 10 SPS\n");
-	} else {
-		printk("Invalid rate: %d SPS (use 10 or 80)\n", rate_sps);
-		return -EINVAL;
-	}
-
-	if (ret < 0) {
-		printk("Failed to set rate pin: %d\n", ret);
-		return ret;
-	}
-
+	printk("HX711: Rate pin not used. Sampling rate is hardware-tied.\n");
 	return 0;
 }
 

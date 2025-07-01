@@ -19,21 +19,17 @@ extern "C" {
 struct hx711_data {
 	const struct device *dout_dev;
 	const struct device *sck_dev;
-	const struct device *rate_dev;
 	gpio_pin_t dout_pin;
 	gpio_pin_t sck_pin;
-	gpio_pin_t rate_pin;
 	gpio_flags_t dout_flags;
 	gpio_flags_t sck_flags;
-	gpio_flags_t rate_flags;
 	bool is_initialized;
 };
 
 /* Function prototypes */
 int hx711_init(struct hx711_data *hx711, 
                const struct device *dout_dev, gpio_pin_t dout_pin, gpio_flags_t dout_flags,
-               const struct device *sck_dev, gpio_pin_t sck_pin, gpio_flags_t sck_flags,
-               const struct device *rate_dev, gpio_pin_t rate_pin, gpio_flags_t rate_flags);
+               const struct device *sck_dev, gpio_pin_t sck_pin, gpio_flags_t sck_flags);
 
 int hx711_read_raw(struct hx711_data *hx711, int32_t *value);
 int hx711_wait_for_data(struct hx711_data *hx711, k_timeout_t timeout);

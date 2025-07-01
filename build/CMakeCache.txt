@@ -33,7 +33,7 @@ BOARD_DIR:PATH=C:/ncs/v2.9.0/zephyr/boards/nordic/nrf52840dk
 BOARD_EXTENSIONS:BOOL=ON
 
 //Sysbuild adjusted BOARD_ROOT
-BOARD_ROOT:PATH=C:/my_boards;C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025
+BOARD_ROOT:PATH=C:/my_boards
 
 //Selected board
 CACHED_BOARD:STRING=nrf52840dk/nrf52840

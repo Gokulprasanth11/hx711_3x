@@ -28,8 +28,7 @@ int main(void)
 	/* Initialize HX711 sensors using device tree GPIO definitions */
 	ret = hx711_init(&hx711_0_data, 
 	                 HX711_0_DOUT_DEV, HX711_0_DOUT_PIN, HX711_0_DOUT_FLAGS,
-	                 HX711_0_SCK_DEV, HX711_0_SCK_PIN, HX711_0_SCK_FLAGS,
-	                 HX711_0_RATE_DEV, HX711_0_RATE_PIN, HX711_0_RATE_FLAGS);
+	                 HX711_0_SCK_DEV, HX711_0_SCK_PIN, HX711_0_SCK_FLAGS);
 	if (ret < 0) {
 		printk("Failed to initialize HX711 sensor 0: %d\n", ret);
 		return -1;
@@ -37,8 +36,7 @@ int main(void)
 
 	ret = hx711_init(&hx711_1_data, 
 	                 HX711_1_DOUT_DEV, HX711_1_DOUT_PIN, HX711_1_DOUT_FLAGS,
-	                 HX711_1_SCK_DEV, HX711_1_SCK_PIN, HX711_1_SCK_FLAGS,
-	                 HX711_1_RATE_DEV, HX711_1_RATE_PIN, HX711_1_RATE_FLAGS);
+	                 HX711_1_SCK_DEV, HX711_1_SCK_PIN, HX711_1_SCK_FLAGS);
 	if (ret < 0) {
 		printk("Failed to initialize HX711 sensor 1: %d\n", ret);
 		return -1;
@@ -46,8 +44,7 @@ int main(void)
 
 	ret = hx711_init(&hx711_2_data, 
 	                 HX711_2_DOUT_DEV, HX711_2_DOUT_PIN, HX711_2_DOUT_FLAGS,
-	                 HX711_2_SCK_DEV, HX711_2_SCK_PIN, HX711_2_SCK_FLAGS,
-	                 HX711_2_RATE_DEV, HX711_2_RATE_PIN, HX711_2_RATE_FLAGS);
+	                 HX711_2_SCK_DEV, HX711_2_SCK_PIN, HX711_2_SCK_FLAGS);
 	if (ret < 0) {
 		printk("Failed to initialize HX711 sensor 2: %d\n", ret);
 		return -1;
