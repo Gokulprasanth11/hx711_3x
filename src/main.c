@@ -22,6 +22,7 @@ int main(void)
 	int ret;
 	int32_t value_0, value_1, value_2;
 	uint32_t sample_count = 0;
+	int not_ready_count_0 = 0, not_ready_count_1 = 0, not_ready_count_2 = 0;
 
 	printk("HX711 Multi-Sensor Application Starting...\n");
 
@@ -61,26 +62,56 @@ int main(void)
 
 	/* Main loop - continuous reading */
 	while (1) {
+		/* Print timestamp */
+		printk("Time: %u ms\n", k_uptime_get_32());
+
 		/* Debug: Print DOUT pin state for all sensors */
 		printk("DOUT0: %d DOUT1: %d DOUT2: %d\n",
 			gpio_pin_get(hx711_0_data.dout_dev, hx711_0_data.dout_pin),
 			gpio_pin_get(hx711_1_data.dout_dev, hx711_1_data.dout_pin),
 			gpio_pin_get(hx711_2_data.dout_dev, hx711_2_data.dout_pin));
 
-		/* Read from all three sensors */
-		ret = hx711_read_raw(&hx711_0_data, &value_0);
-		if (ret < 0) {
-			printk("Error reading sensor 0: %d\n", ret);
+		/* Read from all three sensors only if data is ready */
+		if (hx711_is_data_ready(&hx711_0_data)) {
+			not_ready_count_0 = 0;
+			int ret0 = hx711_read_raw(&hx711_0_data, &value_0);
+			if (ret0 < 0) {
+				printk("Error reading sensor 0: %d\n", ret0);
+			}
+		} else {
+			not_ready_count_0++;
+			printk("Sensor 0 not ready\n");
+			if (not_ready_count_0 > 100) {
+				printk("Warning: Sensor 0 DOUT stuck HIGH for >100 loops! Check wiring or sensor.\n");
+			}
 		}
 
-		ret = hx711_read_raw(&hx711_1_data, &value_1);
-		if (ret < 0) {
-			printk("Error reading sensor 1: %d\n", ret);
+		if (hx711_is_data_ready(&hx711_1_data)) {
+			not_ready_count_1 = 0;
+			int ret1 = hx711_read_raw(&hx711_1_data, &value_1);
+			if (ret1 < 0) {
+				printk("Error reading sensor 1: %d\n", ret1);
+			}
+		} else {
+			not_ready_count_1++;
+			printk("Sensor 1 not ready\n");
+			if (not_ready_count_1 > 100) {
+				printk("Warning: Sensor 1 DOUT stuck HIGH for >100 loops! Check wiring or sensor.\n");
+			}
 		}
 
-		ret = hx711_read_raw(&hx711_2_data, &value_2);
-		if (ret < 0) {
-			printk("Error reading sensor 2: %d\n", ret);
+		if (hx711_is_data_ready(&hx711_2_data)) {
+			not_ready_count_2 = 0;
+			int ret2 = hx711_read_raw(&hx711_2_data, &value_2);
+			if (ret2 < 0) {
+				printk("Error reading sensor 2: %d\n", ret2);
+			}
+		} else {
+			not_ready_count_2++;
+			printk("Sensor 2 not ready\n");
+			if (not_ready_count_2 > 100) {
+				printk("Warning: Sensor 2 DOUT stuck HIGH for >100 loops! Check wiring or sensor.\n");
+			}
 		}
 
 		/* Print raw 24-bit values */

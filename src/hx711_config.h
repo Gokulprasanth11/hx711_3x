@@ -55,10 +55,15 @@
 #define HX711_2_RATE_PIN 0
 #define HX711_2_RATE_FLAGS 0
 
-/* HX711 Configuration */
-#define HX711_GAIN 128
-#define HX711_SAMPLES_PER_SECOND 80
-#define HX711_SLEEP_DELAY_US 70  /* >60µs for sleep mode */
+/* HX711 Configuration - Updated based on datasheet */
+/* Note: Rate and gain are linked according to datasheet Table 1:
+ * - 25 pulses: Channel A, Gain 128, 10 SPS
+ * - 26 pulses: Channel B, Gain 32, 10 SPS  
+ * - 27 pulses: Channel A, Gain 64, 80 SPS
+ */
+#define HX711_DEFAULT_GAIN 64      /* Default gain (will be set to 64 for 80 SPS) */
+#define HX711_DEFAULT_RATE_SPS 80  /* Default data rate in SPS */
+#define HX711_SLEEP_DELAY_US 70    /* >60µs for sleep mode */
 
 /* Calibration values (to be determined experimentally) */
 #define HX711_0_OFFSET 0

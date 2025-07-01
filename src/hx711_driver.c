@@ -36,6 +36,8 @@ int hx711_init(struct hx711_data *hx711,
 		printk("Failed to configure DOUT pin: %d\n", ret);
 		return ret;
 	}
+	int dout_state = gpio_pin_get(hx711->dout_dev, dout_pin);
+	printk("HX711 DOUT pin %d initial state: %d\n", dout_pin, dout_state);
 
 	/* Configure SCK pin as output, initially low */
 	ret = gpio_pin_configure(hx711->sck_dev, sck_pin, sck_flags);
@@ -43,11 +45,15 @@ int hx711_init(struct hx711_data *hx711,
 		printk("Failed to configure SCK pin: %d\n", ret);
 		return ret;
 	}
+	gpio_pin_set(hx711->sck_dev, sck_pin, 0);
+	int sck_state = gpio_pin_get(hx711->sck_dev, sck_pin);
+	printk("HX711 SCK pin %d initial state: %d\n", sck_pin, sck_state);
 
 	/* Power up delay - HX711 needs time to stabilize */
 	k_msleep(400);
 
 	hx711->is_initialized = true;
+	hx711->num_pulses = 25; /* Default to Channel A, Gain 128, 10SPS */
 
 	return 0;
 }
@@ -57,13 +63,14 @@ int hx711_read_raw(struct hx711_data *hx711, int32_t *value)
 	int ret;
 	int32_t raw_value = 0;
 	uint8_t i;
+	int sck_state;
 
 	if (!hx711 || !value || !hx711->is_initialized) {
 		return -EINVAL;
 	}
 
 	/* Wait for data to be ready */
-	ret = hx711_wait_for_data(hx711, K_MSEC(1000));
+	ret = hx711_wait_for_data(hx711, K_MSEC(20));
 	if (ret < 0) {
 		return ret;
 	}
@@ -75,6 +82,8 @@ int hx711_read_raw(struct hx711_data *hx711, int32_t *value)
 		if (ret < 0) {
 			return ret;
 		}
+		sck_state = gpio_pin_get(hx711->sck_dev, hx711->sck_pin);
+		if (sck_state != 1) printk("Warning: SCK pin did not set to HIGH, got %d\n", sck_state);
 		k_busy_wait(1);
 
 		/* Read data bit */
@@ -88,6 +97,8 @@ int hx711_read_raw(struct hx711_data *hx711, int32_t *value)
 		if (ret < 0) {
 			return ret;
 		}
+		sck_state = gpio_pin_get(hx711->sck_dev, hx711->sck_pin);
+		if (sck_state != 0) printk("Warning: SCK pin did not set to LOW, got %d\n", sck_state);
 		k_busy_wait(1);
 
 		/* Shift data into result */
@@ -99,12 +110,16 @@ int hx711_read_raw(struct hx711_data *hx711, int32_t *value)
 	if (ret < 0) {
 		return ret;
 	}
+	sck_state = gpio_pin_get(hx711->sck_dev, hx711->sck_pin);
+	if (sck_state != 1) printk("Warning: SCK pin did not set to HIGH, got %d\n", sck_state);
 	k_busy_wait(1);
 
 	ret = gpio_pin_set(hx711->sck_dev, hx711->sck_pin, 0);
 	if (ret < 0) {
 		return ret;
 	}
+	sck_state = gpio_pin_get(hx711->sck_dev, hx711->sck_pin);
+	if (sck_state != 0) printk("Warning: SCK pin did not set to LOW, got %d\n", sck_state);
 	k_busy_wait(1);
 
 	/* Convert to signed 24-bit value */
