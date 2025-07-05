@@ -1,8 +1,8 @@
-C:\Users\gokul_2rbw\OneDrive\Documents\Driver\hx711_2025\build\Kconfig\Kconfig.sysbuild.modules
-C:\Users\gokul_2rbw\OneDrive\Documents\Driver\hx711_2025\build\Kconfig\boards\Kconfig.nrf52840dk
-C:\Users\gokul_2rbw\OneDrive\Documents\Driver\hx711_2025\build\Kconfig\boards\Kconfig.sysbuild
-C:\Users\gokul_2rbw\OneDrive\Documents\Driver\hx711_2025\build\Kconfig\soc\Kconfig.soc
-C:\Users\gokul_2rbw\OneDrive\Documents\Driver\hx711_2025\build\Kconfig\soc\Kconfig.sysbuild
+C:\Users\gokul_2rbw\OneDrive\Documents\Driver\hx711_gp\hx711_2025\build\Kconfig\Kconfig.sysbuild.modules
+C:\Users\gokul_2rbw\OneDrive\Documents\Driver\hx711_gp\hx711_2025\build\Kconfig\boards\Kconfig.nrf52840dk
+C:\Users\gokul_2rbw\OneDrive\Documents\Driver\hx711_gp\hx711_2025\build\Kconfig\boards\Kconfig.sysbuild
+C:\Users\gokul_2rbw\OneDrive\Documents\Driver\hx711_gp\hx711_2025\build\Kconfig\soc\Kconfig.soc
+C:\Users\gokul_2rbw\OneDrive\Documents\Driver\hx711_gp\hx711_2025\build\Kconfig\soc\Kconfig.sysbuild
 C:\ncs\v2.9.0\nrf\sysbuild\Kconfig.appcore
 C:\ncs\v2.9.0\nrf\sysbuild\Kconfig.approtect
 C:\ncs\v2.9.0\nrf\sysbuild\Kconfig.bt_fast_pair

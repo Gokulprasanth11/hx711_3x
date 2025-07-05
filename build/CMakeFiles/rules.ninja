@@ -23,7 +23,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\ncs\toolchains\0b393f9e1b\opt\bin\cmake.exe --regenerate-during-build -SC:\ncs\v2.9.0\zephyr\share\sysbuild -BC:\Users\gokul_2rbw\OneDrive\Documents\Driver\hx711_2025\build
+  command = C:\ncs\toolchains\0b393f9e1b\opt\bin\cmake.exe --regenerate-during-build -SC:\ncs\v2.9.0\zephyr\share\sysbuild -BC:\Users\gokul_2rbw\OneDrive\Documents\Driver\hx711_gp\hx711_2025\build
   description = Re-running CMake...
   generator = 1
 

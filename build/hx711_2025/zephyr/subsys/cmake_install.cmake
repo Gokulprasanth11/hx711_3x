@@ -39,101 +39,101 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/canbus/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/canbus/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/debug/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/debug/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/fb/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/fb/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/fs/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/fs/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/ipc/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/ipc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/logging/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/logging/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/mem_mgmt/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/mem_mgmt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/mgmt/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/mgmt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/modbus/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/modbus/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/pm/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/pm/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/portability/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/portability/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/random/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/random/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/rtio/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/rtio/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/sd/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/sd/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/stats/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/stats/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/storage/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/storage/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/task_wdt/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/task_wdt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/testsuite/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/testsuite/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/tracing/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/tracing/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/subsys/usb/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/subsys/usb/cmake_install.cmake")
 endif()
 

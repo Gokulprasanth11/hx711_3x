@@ -17,7 +17,7 @@ config:
   board_dir: C:/ncs/v2.9.0/zephyr/boards/nordic/nrf52840dk
   # Build outputs:
   elf_file: zephyr.elf
-  hex_file: C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/merged.hex
+  hex_file: C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/merged.hex
   bin_file: zephyr.bin
   # Host tools:
   gdb: C:/ncs/toolchains/0b393f9e1b/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb.exe

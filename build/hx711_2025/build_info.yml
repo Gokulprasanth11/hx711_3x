@@ -1,7 +1,7 @@
 cmake:
   application:
-    configuration-dir: C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025
-    source-dir: C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025
+    configuration-dir: C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025
+    source-dir: C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025
   board:
     name: nrf52840dk
     qualifiers: nrf52840
@@ -12,7 +12,7 @@ cmake:
      - C:/ncs/v2.9.0/zephyr/dts/bindings
     files:
      - C:/ncs/v2.9.0/zephyr/boards/nordic/nrf52840dk/nrf52840dk_nrf52840.dts
-     - C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/boards/nrf52840dk_nrf52840.overlay
+     - C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/boards/nrf52840dk_nrf52840.overlay
     include-dirs:
      - C:/ncs/v2.9.0/nrf/include
      - C:/ncs/v2.9.0/nrf/dts
@@ -30,14 +30,14 @@ cmake:
      - C:/ncs/v2.9.0/zephyr/dts/arc
      - C:/ncs/v2.9.0/zephyr/dts
     user-files:
-     - C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/boards/nrf52840dk_nrf52840.overlay
+     - C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/boards/nrf52840dk_nrf52840.overlay
   kconfig:
     files:
      - C:/ncs/v2.9.0/zephyr/boards/nordic/nrf52840dk/nrf52840dk_nrf52840_defconfig
-     - C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/prj.conf
-     - C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/.config.sysbuild
+     - C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/prj.conf
+     - C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/.config.sysbuild
     user-files:
-     - C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/prj.conf
+     - C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/prj.conf
   toolchain:
     name: zephyr
     path: C:/ncs/toolchains/0b393f9e1b/opt/zephyr-sdk

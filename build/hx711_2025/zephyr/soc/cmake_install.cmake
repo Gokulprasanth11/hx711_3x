@@ -39,11 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/soc/common/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/soc/common/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/hx711_2025/zephyr/soc/soc/nrf52840/cmake_install.cmake")
+  include("C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/hx711_2025/zephyr/soc/soc/nrf52840/cmake_install.cmake")
 endif()
 

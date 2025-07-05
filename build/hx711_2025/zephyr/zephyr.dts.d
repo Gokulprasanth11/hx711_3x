@@ -29,4 +29,4 @@ empty_file.o: C:/ncs/v2.9.0/zephyr/misc/empty_file.c \
  C:/ncs/v2.9.0/zephyr/include/zephyr/dt-bindings/regulator/nrf5x.h \
  C:/ncs/v2.9.0/zephyr/dts/common/nordic/nrf52840_partition.dtsi \
  C:/ncs/v2.9.0/zephyr/boards/nordic/nrf52840dk/nrf52840dk_nrf52840-pinctrl.dtsi \
- C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/boards/nrf52840dk_nrf52840.overlay
+ C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/boards/nrf52840dk_nrf52840.overlay

@@ -1241,7 +1241,7 @@ zephyr_udc0: &usbd {
  status = "okay";
 };
 # 0 "<command-line>" 2
-# 1 "C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/boards/nrf52840dk_nrf52840.overlay" 1
+# 1 "C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/boards/nrf52840dk_nrf52840.overlay" 1
 
 &uart0 {
         status = "disabled";

@@ -7,13 +7,13 @@ cmake:
     revision: 
   kconfig:
     files:
-     - C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/empty.conf
-     - C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/empty.conf
+     - C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/_sysbuild/empty.conf
+     - C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/_sysbuild/empty.conf
     user-files:
-     - C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build/_sysbuild/empty.conf
+     - C:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build/_sysbuild/empty.conf
   sysbuild: true
 version: 0.1.0
 west:
-  command: C:\ncs\toolchains\0b393f9e1b\opt\bin\Scripts\west build --build-dir c:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025/build c:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_2025 --pristine --board nrf52840dk/nrf52840 --sysbuild -- -DNCS_TOOLCHAIN_VERSION=NONE -DBOARD_ROOT=c:/my_boards;c:/users/gokul_2rbw/onedrive/documents/driver/hx711_2025
+  command: C:\ncs\toolchains\0b393f9e1b\opt\bin\Scripts\west build --build-dir c:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025/build c:/Users/gokul_2rbw/OneDrive/Documents/Driver/hx711_gp/hx711_2025 --pristine --board nrf52840dk/nrf52840 --sysbuild -- -DNCS_TOOLCHAIN_VERSION=NONE -DBOARD_ROOT=c:/my_boards
   topdir: c:\ncs\v2.9.0
   version: 1.2.0
